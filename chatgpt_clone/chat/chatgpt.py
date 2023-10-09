@@ -42,6 +42,6 @@ def chat(message, conversation, model, system_message, web_access=False) -> Call
     messages.append(message)
 
     response = openai.ChatCompletion.create(
-        messages=messages, model=model, max_tokens=500, stream=True
+        messages=messages, model=model, temperature=settings.OPENAI_TEMPERATURE, max_tokens=500, stream=True
     )
     return lambda: stream(response)
