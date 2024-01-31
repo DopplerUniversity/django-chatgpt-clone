@@ -38,7 +38,7 @@ jobs:
             requirements/production.txt
 
       - name: Install Doppler CLI
-        uses: dopplerhq/cli-action@v2
+        uses: dopplerhq/cli-action@v3
 
       - name: Install Dependencies
         run: |
