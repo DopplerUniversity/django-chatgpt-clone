@@ -2,6 +2,8 @@
 
 Django version of the [chatgpt-clone](https://github.com/xtekky/chatgpt-clone).
 
+https://github.com/DopplerUniversity/django-chatgpt-clone/assets/133014/33aa46be-f437-45f3-b493-488958f306f9
+
 [![Built with Cookiecutter Django](https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter)](https://github.com/cookiecutter/cookiecutter-django/)
 [![Black code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
