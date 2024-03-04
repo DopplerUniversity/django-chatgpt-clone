@@ -1,10 +1,11 @@
 from typing import Callable
 
-import openai
 from django.conf import settings
 from duckduckgo_search import DDGS
+from openai import OpenAI
+from openai.types.chat import ChatCompletionMessageParam
 
-openai.api_key = settings.OPENAI_API_KEY
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
 
 
 def web_search(query):
@@ -19,11 +20,13 @@ def web_search(query):
 def chat(message, conversation, model, system_message, web_access=False) -> Callable:
     def stream(response):
         for chunk in response:
-            content = chunk["choices"][0]["delta"].get("content")
+            content = chunk.choices[0].delta.content
             if content is not None:
                 yield content
 
-    messages = [{"role": "system", "content": system_message}]
+    messages: list[ChatCompletionMessageParam] = [
+        {"role": "system", "content": system_message}
+    ]
 
     if web_access:
         search_results = web_search(message["content"])[:5]
@@ -41,7 +44,7 @@ def chat(message, conversation, model, system_message, web_access=False) -> Call
 
     messages.append(message)
 
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         messages=messages, model=model, temperature=settings.OPENAI_TEMPERATURE, max_tokens=500, stream=True
     )
     return lambda: stream(response)

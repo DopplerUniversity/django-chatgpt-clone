@@ -1,5 +1,5 @@
 python-slugify==8.0.1  # https://github.com/un33k/python-slugify
-Pillow==9.5.0  # https://github.com/python-pillow/Pillow
+Pillow==10.2.0  # https://github.com/python-pillow/Pillow
 argon2-cffi==21.3.0  # https://github.com/hynek/argon2_cffi
 whitenoise==6.5.0  # https://github.com/evansd/whitenoise
 redis==4.5.5  # https://github.com/redis/redis-py
@@ -9,11 +9,11 @@ openai==1.6.1  # https://github.com/openai/openai-python
 duckduckgo_search==3.8.3  # https://github.com/deedy5/duckduckgo_search
 gunicorn==21.2.0  # https://github.com/benoitc/gunicorn
 tabulate==0.9.0  # https://github.com/astanin/python-tabulate
-types-tabulate==0.9.0.3  # https://github.com/python/typeshed
+types-tabulate==0.9.0.20240106  # https://github.com/python/typeshed
 
 # Django
 # ------------------------------------------------------------------------------
-django==4.1.9  # pyup: < 4.2  # https://www.djangoproject.com/
+django==5.0.2  # pyup: < 4.2  # https://www.djangoproject.com/
 django-model-utils==4.3.1  # https://github.com/jazzband/django-model-utils
 django-allauth==0.54.0  # https://github.com/pennersr/django-allauth
 django-redis==5.3.0  # https://github.com/jazzband/django-redis
